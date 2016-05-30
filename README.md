@@ -16,9 +16,9 @@ The columns and data types are the following.
 ###### Prototypes Table
 The columns and data types are the following.
 
-|     name   |   user_id   |  catchcopy   |    concept   | like_count |
-|:----------:|:-----------:|:------------:|:------------:|:----------:|
-|   string   |   integer   |     text     |     text     | integer    |
+|     name   |   user_id   |  catchcopy   |    concept   | like_count | image |
+|:----------:|:-----------:|:------------:|:------------:|:----------:|:------:|
+|   string   |   integer   |     text     |     text     | integer    |  text  |
 
 ###### Comments Table
 The columns and data types are the following.
