@@ -15,6 +15,7 @@ The columns and data types are the following.
 
 ###### Prototypes Table
 The columns and data types are the following.
+
 |     name   |   user_id   |  catchcopy   |    concept   |
 |:-----------|------------:|:------------:|:------------:|
 |   string   |   integer   |     text     |     text     |
