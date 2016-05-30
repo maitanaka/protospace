@@ -1,28 +1,46 @@
-== README
+Tables and Models of Protospace
+====
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Contents of tables such as what columns are included and data types to those. Also, the associations between the models are explained.
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+## Tables
+### Users Table
+The columns and data types are the following.
+
+|  nickname  |   profile   |    image     |    work      |
+|:-----------|------------:|:------------:|:------------:|
+|   string   |     text    |     text     |     text     |
+
+
+### Prototypes Table
+The columns and data types are the following.
+|     name   |   user_id   |  catchcopy   |    concept   |
+|:-----------|------------:|:------------:|:------------:|
+|   string   |   integer   |     text     |     text     |
+
+### Comments Table
+The columns and data types are the following.
+
+|    text    |   user_id   |prototypes_id |
+|:-----------|------------:|:------------:|
+|   text     |   integer   |   integer    |
+
+
+### Likes Table
+The columns and data types are the following.
+
+| like_count |   user_id   |prototypes_id |
+|:-----------|------------:|:------------:|
+|   integer  |   integer   |   integer    |
+
+## Models
+## Associations
+User has many prototypes, comments, and likes.
+
+Protoype belongs to user.
+Prototype has many comments and likes.
+
+Comment belongs to user and prototype.
+
+Like belongs to user and prototype.
