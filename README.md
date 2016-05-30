@@ -8,32 +8,32 @@ Contents of tables such as what columns are included and data types to those. Al
 ###### Users Table
 The columns and data types are the following.
 
-|  nickname  |   profile   |    image     |    work      |
-|:-----------|------------:|:------------:|:------------:|
-|   string   |     text    |     text     |     text     |
+|  nickname  |   profile   |    image     |    work      |   group    |
+|:----------:|:-----------:|:------------:|:------------:|:----------:|
+|   string   |     string  |     string   |      string  |   string   |
 
 
 ###### Prototypes Table
 The columns and data types are the following.
 
-|     name   |   user_id   |  catchcopy   |    concept   |
-|:-----------|------------:|:------------:|:------------:|
-|   string   |   integer   |     text     |     text     |
+|     name   |   user_id   |  catchcopy   |    concept   | like_count |
+|:----------:|:-----------:|:------------:|:------------:|:----------:|
+|   string   |   integer   |     text     |     text     | integer    |
 
 ###### Comments Table
 The columns and data types are the following.
 
-|    text    |   user_id   |prototypes_id |
-|:-----------|------------:|:------------:|
-|   text     |   integer   |   integer    |
+|    text    |   user_id     | prototype_id|
+|:-----------:|:------------:|:------------:|
+|   string     |   integer   |   integer    |
 
 
 ###### Likes Table
 The columns and data types are the following.
 
-| like_count |   user_id   |prototypes_id |
-|:-----------|------------:|:------------:|
-|   integer  |   integer   |   integer    |
+|   user_id   | prototype_id |
+|:-----------:|:------------:|
+|   integer  |   integer    |
 
 ## Models
 ###### Associations
