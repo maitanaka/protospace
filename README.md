@@ -35,9 +35,17 @@ The columns and data types are the following.
 |:-----------:|:------------:|
 |   integer  |   integer    |
 
+####### Images Table
+The columns and data types are the following.
+
+|    Image   |
+|:----------:|
+|   string   |
+
+
 ## Models
 ###### Associations
-User has many prototypes, comments, and likes.
+User has many prototypes, comments, Images, and likes.
 
 Protoype belongs to user.
 Prototype has many comments and likes.
@@ -45,3 +53,5 @@ Prototype has many comments and likes.
 Comment belongs to user and prototype.
 
 Like belongs to user and prototype.
+
+Image belongs to user and prototype.
