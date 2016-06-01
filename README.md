@@ -38,9 +38,9 @@ The columns and data types are the following.
 ####### Images Table
 The columns and data types are the following.
 
-|    Image   |
-|:----------:|
-|   string   |
+|    Image   | prototype_id |
+|:----------:|:------------:|
+|   string   |     integer   |
 
 
 ## Models
