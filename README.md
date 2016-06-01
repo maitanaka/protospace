@@ -45,13 +45,13 @@ The columns and data types are the following.
 
 ## Models
 ###### Associations
-User has many prototypes, comments, Images, and likes.
+User has many prototypes, comments, and likes.
 
 Protoype belongs to user.
-Prototype has many comments and likes.
+Prototype has many comments, likes, and images.
 
 Comment belongs to user and prototype.
 
 Like belongs to user and prototype.
 
-Image belongs to user and prototype.
+Image belongs to prototype.
