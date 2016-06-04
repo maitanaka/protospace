@@ -50,12 +50,16 @@ GEM
     coffee-script-source (1.10.0)
     concurrent-ruby (1.0.2)
     debug_inspector (0.0.2)
+<<<<<<< HEAD
     erb2haml (0.1.5)
       html2haml
+=======
+>>>>>>> d41c1b040a51b0d03ac71d5a02ed0bb6c0170531
     erubis (2.7.0)
     execjs (2.7.0)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
+<<<<<<< HEAD
     haml (4.0.7)
       tilt
     haml-rails (0.9.0)
@@ -71,6 +75,10 @@ GEM
       ruby_parser (~> 3.5)
     i18n (0.7.0)
     jbuilder (2.5.0)
+=======
+    i18n (0.7.0)
+    jbuilder (2.4.1)
+>>>>>>> d41c1b040a51b0d03ac71d5a02ed0bb6c0170531
       activesupport (>= 3.0.0, < 5.1)
       multi_json (~> 1.2)
     jquery-rails (4.1.1)
@@ -121,8 +129,11 @@ GEM
     rake (11.1.2)
     rdoc (4.2.2)
       json (~> 1.4)
+<<<<<<< HEAD
     ruby_parser (3.8.2)
       sexp_processor (~> 4.1)
+=======
+>>>>>>> d41c1b040a51b0d03ac71d5a02ed0bb6c0170531
     sass (3.4.22)
     sass-rails (5.0.4)
       railties (>= 4.0.0, < 5.0)
@@ -133,7 +144,10 @@ GEM
     sdoc (0.4.1)
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
+<<<<<<< HEAD
     sexp_processor (4.7.0)
+=======
+>>>>>>> d41c1b040a51b0d03ac71d5a02ed0bb6c0170531
     spring (1.7.1)
     sprockets (3.6.0)
       concurrent-ruby (~> 1.0)
@@ -144,7 +158,11 @@ GEM
       sprockets (>= 3.0.0)
     thor (0.19.1)
     thread_safe (0.3.5)
+<<<<<<< HEAD
     tilt (2.0.5)
+=======
+    tilt (2.0.4)
+>>>>>>> d41c1b040a51b0d03ac71d5a02ed0bb6c0170531
     turbolinks (2.5.3)
       coffee-rails
     tzinfo (1.2.2)
@@ -163,8 +181,11 @@ PLATFORMS
 DEPENDENCIES
   byebug
   coffee-rails (~> 4.1.0)
+<<<<<<< HEAD
   erb2haml
   haml-rails
+=======
+>>>>>>> d41c1b040a51b0d03ac71d5a02ed0bb6c0170531
   jbuilder (~> 2.0)
   jquery-rails
   mysql2 (>= 0.3.13, < 0.5)

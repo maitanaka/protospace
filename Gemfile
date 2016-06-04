@@ -45,5 +45,8 @@ group :development do
   gem 'spring'
 end
 
+<<<<<<< HEAD
 gem 'haml-rails'
 gem 'erb2haml'
+=======
+>>>>>>> d41c1b040a51b0d03ac71d5a02ed0bb6c0170531
