@@ -4,6 +4,13 @@ Rails.application.routes.draw do
     :passwords => 'users/passwords',
     :sessions => 'users/sessions'
   }
+  resources :users, only: [:edit, :index, :show]
+  root 'prototypes#index'
+
+  get  '/prototypes/index'  =>    'prototypes#index'
+  get  '/prototypes/new'    =>    'prototypes#new'
+  get  '/prototypes/show'   =>    'prototypes#show'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

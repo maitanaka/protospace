@@ -67,3 +67,5 @@ gem 'devise'
 gem 'awesome_print'
 
 gem 'annotate'
+
+gem 'kaminari'
