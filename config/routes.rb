@@ -1,11 +1,7 @@
 Rails.application.routes.draw do
-  devise_for :users, :controllers => {
-    :registrations => 'users/registrations',
-    :passwords => 'users/passwords',
-    :sessions => 'users/sessions'
-  }
-  resources :users, only: [:edit, :index, :show]
+  devise_for :users
   root 'prototypes#index'
+  resources :users, only: [:edit, :index, :show, :update]
 
   get  '/prototypes/index'  =>    'prototypes#index'
   get  '/prototypes/new'    =>    'prototypes#new'
