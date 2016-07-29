@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
   before_action :set_user
+  before_action :authenticate_user!
+
 
   def index
   end
@@ -11,8 +13,11 @@ class UsersController < ApplicationController
   end
 
   def update
-    current_user.update(user_params)
-    redirect_to action: :show
+    if @user.update(user_params)
+      redirect_to ({:action => 'show'}), :notice => 'Successfully edited your account!'
+    else
+      redirect_to edit_user_path, alert: 'Failed to edit your profile'
+    end
   end
 
   private
