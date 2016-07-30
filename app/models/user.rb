@@ -4,6 +4,6 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-validates_presence_of :email, :password, :nickname
+validates_presence_of :nickname
 
 end
