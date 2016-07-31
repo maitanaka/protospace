@@ -69,3 +69,4 @@ gem 'awesome_print'
 gem 'annotate'
 
 gem 'kaminari'
+gem 'carrierwave'

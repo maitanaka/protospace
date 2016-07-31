@@ -12,7 +12,8 @@
             .user-name.col-md-10
               = f.text_field :nickname, placeholder: "Nickname"
             .user-image.col-md-2
-              = f.button "Change Image", class: "btn btn-primary"
+              = f.button "Change Image", class: "btn-primary"
+              = f.file_field :avatar
             .user-email
               = f.email_field :email, placeholder: "E-Mail"
             .user-password
