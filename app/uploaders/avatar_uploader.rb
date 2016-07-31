@@ -48,10 +48,4 @@ class AvatarUploader < CarrierWave::Uploader::Base
     super.chomp(File.extname(super)) + '.jpg' if original_filename.present?
   end
 
-  def filename
-    time = Time.now
-    name = time.strftime('%Y%m%d%H%M%S') + '.jpg'
-    name.downcase
-  end
-
 end
