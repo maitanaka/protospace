@@ -1,4 +1,6 @@
 class PrototypesController < ApplicationController
+  before_action :authenticate_user!
+
 
   def index
   end
@@ -9,8 +11,12 @@ class PrototypesController < ApplicationController
   end
 
   def create
-    @prototype = Prototype.create(create_params)
-    redirect_to controller: :prototypes, action: :index
+      @prototype = Prototype.new(create_params)
+    if @prototype.save
+      redirect_to controller: :prototypes, action: :index
+    else
+      render :new
+    end
   end
 
   def show
@@ -19,7 +25,7 @@ class PrototypesController < ApplicationController
   private
 
     def create_params
-      params.require(:prototype).permit(:name, :catchcopy, :concept, images_attributes: [:image, :status]).merge(user_id: current_user.id)
+      params.require(:prototype).permit(:name, :catchcopy, :concept, images_attributes: [:image_url, :status]).merge(user_id: current_user.id)
     end
 
 end
