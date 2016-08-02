@@ -3,6 +3,7 @@ class PrototypesController < ApplicationController
 
 
   def index
+    @prototypes = Prototype.all
   end
 
   def new
@@ -20,6 +21,8 @@ class PrototypesController < ApplicationController
   end
 
   def show
+    @prototype = Prototype.find(params[:id])
+    @user = User.find(@prototype.user_id)
   end
 
   private
