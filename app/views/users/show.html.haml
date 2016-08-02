@@ -2,8 +2,8 @@
   %header.user-nav
     .media
       .media-left
-        %a{href: user_path(@user)}
-          %img.media-object{alt: "user_avatar", src: @user.avatar, style: "width: 64px; height: 64px;"}
+        = link_to user_path(@user) do
+          = image_tag @user.avatar, alt: "user_avatar", class: "img media-object", style: "width: 64px; height: 64px;"
       .media-body
         %h4#top-aligned-media.media-heading
           Top aligned media
@@ -27,11 +27,11 @@
     - @user.prototypes.each do |prototype|
       .col-sm-4.col-md-3.proto-content
         .thumbnail
-          %a{href: prototype_path(prototype)}
+          = link_to prototype_path(prototype) do
             = image_tag prototype.get_main_img
             .caption
               %h3
-              = prototype.name
+                = prototype.name
               .proto-meta
                 .proto-date
                   = prototype.date

@@ -17,14 +17,15 @@
     - @prototypes.each do |prototype|
       .col-sm-4.col-md-3.proto-content
         .thumbnail
-          %a{href: prototype_path(prototype)}
+          = link_to prototype_path(prototype) do
             = image_tag prototype.get_main_img
             .caption
               %h3
               = prototype.name
               .proto-meta
                 .proto-user
-                  %a{href: user_path(prototype.user)}= "by #{prototype.user.nickname}"
+                  = link_to user_path(prototype.user) do
+                    = "by #{prototype.user.nickname}"
                 .proto-posted
                   = prototype.date
               %ul.proto-tag-list.list-inline

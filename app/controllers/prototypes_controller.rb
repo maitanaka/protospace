@@ -22,7 +22,7 @@ class PrototypesController < ApplicationController
 
   def show
     @prototype = Prototype.find(params[:id])
-    @user = User.find(@prototype.user_id)
+    @user = @prototype.user
   end
 
   private

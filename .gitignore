@@ -12,4 +12,4 @@
 !/log/.keep
 /tmp
 /app/assets/images/*
-/public/uploads/image/image_url
+/public/uploads/*
