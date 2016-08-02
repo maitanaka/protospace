@@ -14,7 +14,14 @@ module Protospace
     config.generators do |g|
         g.test_framework false
     end
+        # 表示時のタイムゾーンをJSTに変更
+    config.time_zone = 'Tokyo'
+    # DB保存時のタイムゾーンをJSTに変更
+    config.active_record.default_timezone = :local
 
+    # ロケールを日本語に変更
+    # I18n.enforce_available_locales = false
+    # config.i18n.default_locale = :ja
     # Set Time.zone default to the specified zone and make Active Record auto-convert to this zone.
     # Run "rake -D time" for a list of tasks for finding time zone names. Default is UTC.
     # config.time_zone = 'Central Time (US & Canada)'
