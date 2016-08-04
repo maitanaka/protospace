@@ -1,6 +1,8 @@
 class PrototypesController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit]
-  before_action :set_prototype, only: [:show, :destroy, :edit, :update]
+  before_action :set_prototype, only: [:show, :destroy, :update,:edit]
+  before_action :correct_user, only: [:edit, :update, :destroy]
+
 
   def index
     @prototypes = Prototype.all
@@ -12,9 +14,9 @@ class PrototypesController < ApplicationController
   end
 
   def create
-    @prototype = Prototype.new(prototype_params)
+    @prototype = current_user.prototypes.new(prototype_params)
     if @prototype.save
-      redirect_to prototypes_path, flash: { success: "Successfully uploaded your prototype!!" }
+      redirect_to root_path, flash: { success: "Successfully uploaded your prototype!!" }
     else
       render :new
     end
@@ -34,7 +36,7 @@ class PrototypesController < ApplicationController
 
   def update
     if @prototype.update(prototype_params)
-      redirect_to prototypes_path, flash: { success: "Updated your prototype" }
+      redirect_to root_path, flash: { success: "Updated your prototype" }
     else
       render :edit
     end
@@ -43,11 +45,24 @@ class PrototypesController < ApplicationController
   private
 
     def prototype_params
-      params.require(:prototype).permit(:name, :catchcopy, :concept, images_attributes: [:id, :image_url, :status]).merge(user_id: current_user.id)
+      params.require(:prototype).permit(
+        :name,
+        :catchcopy,
+        :concept,
+        images_attributes: [:id, :image_url, :status]
+        )
     end
 
     def set_prototype
       @prototype = Prototype.find(params[:id])
     end
+
+    def correct_user
+    user = Prototype.find(params[:id]).user
+    if current_user != user
+      redirect_to root_path
+    end
+  end
+
 
 end

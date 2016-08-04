@@ -1,11 +1,11 @@
 class Prototype < ActiveRecord::Base
   belongs_to :user
   has_many :images, dependent: :destroy
-  accepts_nested_attributes_for :images, reject_if: :reject_image_url
+  accepts_nested_attributes_for :images, reject_if: :reject_image
 
   validates_presence_of :name, :catchcopy, :concept
 
-  def reject_image_url(attributed)
+  def reject_image(attributed)
     attributed['image_url'].blank?
   end
 
