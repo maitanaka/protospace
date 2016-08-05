@@ -1,0 +1,24 @@
+- if user_signed_in?
+  - if prototype.like_user(current_user.id)
+    %button.btn.btn-default
+      = link_to prototype_like_path(prototype_id: prototype.id, id: prototype.user_id), method: :delete, id: "like-button", remote: true do
+        = image_tag("icon_red_heart.svg")
+      Like
+      %span.num
+      = prototype.like_count
+
+  - else
+    %button.btn.btn-default
+      = link_to prototype_likes_path(prototype_id: prototype.id, id: prototype.user_id), id: "like-button", method: :post, remote: true do
+        = image_tag("icon_heart.svg")
+      Like
+      %span.num
+      = prototype.like_count
+
+- else
+  %button.btn.btn-default
+    = link_to new_user_session_path do
+      = image_tag("icon_heart.svg")
+    Like
+    %span.num
+    = prototype.like_count

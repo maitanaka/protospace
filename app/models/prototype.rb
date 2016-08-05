@@ -1,6 +1,7 @@
 class Prototype < ActiveRecord::Base
   belongs_to :user
   has_many :images, dependent: :destroy
+  has_many :likes, dependent: :destroy
   accepts_nested_attributes_for :images, reject_if: :reject_image
 
   validates_presence_of :name, :catchcopy, :concept
@@ -16,5 +17,10 @@ class Prototype < ActiveRecord::Base
   def get_main_img
     images.main.first.image_url
   end
+
+  def like_user(user_id)
+   likes.find_by(user_id: user_id)
+  end
+
 
 end
