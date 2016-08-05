@@ -2,7 +2,9 @@ Rails.application.routes.draw do
   devise_for :users
   resources :users, only: [:edit, :show, :update]
   root to: 'prototypes#index'
-  resources :prototypes
+  resources :prototypes do
+    resources :likes, only: [:create, :destroy]
+  end
 
   # get  '/prototypes/index'  =>    'prototypes#index'
   # get  '/prototypes/new'    =>    'prototypes#new'
