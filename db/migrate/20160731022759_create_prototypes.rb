@@ -5,7 +5,7 @@ class CreatePrototypes < ActiveRecord::Migration
       t.integer   :user_id
       t.text      :catchcopy
       t.text      :concept
-      t.integer   :like_count
+      t.integer   :like_count, : default => 0
       t.text      :image
 
       t.timestamps
