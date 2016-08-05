@@ -25,21 +25,7 @@
 .container.proto-list
   .row
     - @user.prototypes.each do |prototype|
-      .col-sm-4.col-md-3.proto-content
-        .thumbnail
-          = link_to prototype_path(prototype) do
-            = image_tag prototype.get_main_img
-            .caption
-              %h3
-                = prototype.name
-              .proto-meta
-                .proto-date
-                  = prototype.date
-              %ul.proto-tag-list.list-inline
-                %li
-                  %a{href: "#", class: "btn btn-default"} iPad
-                %li
-                  %a{href: "#", class: "btn btn-default"} wireframe
+      = render prototype
 
 .text-center
   %ul.pagination
@@ -61,4 +47,3 @@
     %li
       %a{"aria-label": "Next", href: "#"}
         %span{"aria-hidden": "true"} »
-
