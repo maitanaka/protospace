@@ -14,8 +14,7 @@
 
 .container.proto-list
   .row
-    - @prototypes.each do |prototype|
-      = render partial: 'prototype', locals: { prototype: prototype }
+    = render @prototypes
 .text-center
   %ul.pagination
     %li.disabled

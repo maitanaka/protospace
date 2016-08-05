@@ -25,7 +25,7 @@
 .container.proto-list
   .row
     - @user.prototypes.each do |prototype|
-      = render partial: 'prototypes/prototype', locals: { prototype: prototype }
+      = render prototype
 
 .text-center
   %ul.pagination
