@@ -7,6 +7,8 @@ class Prototype < ActiveRecord::Base
 
   validates_presence_of :name, :catchcopy, :concept
 
+  scope :likes_desc, -> {order('like_count desc')}
+
   def reject_image(attributed)
     attributed['image_url'].blank?
   end
