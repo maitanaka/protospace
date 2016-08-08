@@ -285,7 +285,17 @@ body {
   box-shadow: 0 2px 5px rgba(100,100,100,0.2);
   padding: 20px 0;
   margin-bottom: 20px;
-
+  .tags-list li a {
+    display: block;
+    text-align: left;
+    padding: 20px;
+    border-radius: 3px;
+    &:hover {
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(103, 171, 250, 0.2);
+    color: #67ABFA;
+}
+}
 }
 
 .proto-content {
@@ -320,6 +330,7 @@ body {
     border: 1px solid #eee;
   }
 }
+
 
 .proto-page {
   .user-nav {
@@ -548,6 +559,7 @@ body {
     margin: auto;
   }
 }
+
 
 .form-signin {
   max-width: 330px;
