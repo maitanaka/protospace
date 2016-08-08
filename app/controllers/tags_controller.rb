@@ -1,7 +1,6 @@
 class TagsController < ApplicationController
   def index
     @tags = ActsAsTaggableOn::Tag.most_used
-    binding.pry
   end
 
   def show
