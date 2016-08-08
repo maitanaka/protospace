@@ -26,6 +26,7 @@ class PrototypesController < ApplicationController
     @user = @prototype.user
     @comment = Comment.new
     @comments = @prototype.comments.includes(:user)
+    @tags = @prototype.prototype_list
 
   end
 
@@ -53,7 +54,7 @@ class PrototypesController < ApplicationController
         :catchcopy,
         :concept,
         images_attributes: [:id, :image_url, :status]
-        )
+        ).merge(prototype_list: params[:prototype][:tag])
     end
 
     def set_prototype
