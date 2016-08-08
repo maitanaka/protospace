@@ -35,13 +35,7 @@
       %h4 Concept
       %p
         = @prototype.concept
-    .col-md-3
-      %h4 Tag List
-      %ul.proto-tag-list.list-inline
-        %li
-          %a{href: "#", class: "btn btn-default"} iPad
-        %li
-          %a{href: "#", class: "btn btn-default"} wireframe
+    = render partial: "tags/tag_list"
   .row.proto-comments
     %h4.col-md-12
       Comments

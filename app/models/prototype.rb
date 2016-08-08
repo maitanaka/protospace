@@ -10,6 +10,10 @@ class Prototype < ActiveRecord::Base
   scope :likes_desc, -> {order('like_count desc')}
   scope :created_desc, -> {order('created_at desc')}
 
+  acts_as_taggable_on :tags
+  acts_as_ordered_taggable_on :tags
+
+
   def reject_image(attributed)
     attributed['image_url'].blank?
   end
