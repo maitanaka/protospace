@@ -70,3 +70,5 @@ gem 'annotate'
 
 gem 'kaminari'
 gem 'carrierwave'
+
+gem 'acts-as-taggable-on'
