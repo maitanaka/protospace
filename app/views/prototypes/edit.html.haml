@@ -11,7 +11,7 @@
             = f.text_field :name, value: @prototype.name
       .row
         .col-md-12
-          .cover-image-upload
+          .cover-image-upload.js-img-preview
             = f.fields_for :images, @prototype.images.main do |image_form|
               = image_form.file_field :image_url
               = image_form.hidden_field :status, value: "main"
@@ -19,7 +19,7 @@
           %ul.proto-sub-list.list-group
             - @prototype.images.sub.each do |sub|
               %li.list-group-item.col-md-4
-                .image-upload
+                .image-upload.js-img-preview
                   = f.fields_for :images, sub do |image_form|
                     = image_form.file_field :image_url
                     = image_form.hidden_field :status, value: "sub"
