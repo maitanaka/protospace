@@ -1,6 +1,6 @@
 $(window).on("click", function(){
   $(".js-img-preview").each(function() {
-    var prev = $(this),
+    var prev = $(this)
     image = prev.find('input[type=file]');
     image.change(function(){
       var file = this.files[0]
