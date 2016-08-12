@@ -1,4 +1,4 @@
-$(document).ready(function(){
+$(window).on("click", function(){
   $(".js-img-preview").each(function() {
     var prev = $(this)
     image = prev.find('input[type=file]');
