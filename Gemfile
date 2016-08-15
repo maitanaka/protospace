@@ -72,3 +72,7 @@ gem 'kaminari'
 gem 'carrierwave'
 
 gem 'acts-as-taggable-on'
+
+gem 'config'
+
+gem 'fog'
