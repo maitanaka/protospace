@@ -4,4 +4,6 @@ class Image < ActiveRecord::Base
   enum status: [:main, :sub]
 
   mount_uploader :image_url, ImageUploader
+
+  validates :image_url, :status, presence: true
 end
