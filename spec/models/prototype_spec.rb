@@ -11,9 +11,6 @@ require 'rails_helper'
     end
 
       context "without valid attributes" do
-        it "is valid with a name, catchcopy, concept" do
-          prototype = build(:prototype)
-        end
 
         it "is invalid without a name" do
           prototype = build(:prototype, name: nil)
@@ -74,8 +71,8 @@ require 'rails_helper'
 
       describe "#posted_date" do
         it 'returns dates in a specified format' do
-          prototype = build(:prototype)
-          expect(prototype).to be_valid
+          prototype = build(:prototype, created_at: "2016-05-07")
+          expect(prototype.date).to eq "May 07"
         end
       end
     end
