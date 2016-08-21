@@ -1,5 +1,5 @@
 class PrototypesController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create, :edit]
+  before_action :authenticate_user!, except: [:index, :show]
   before_action :set_prototype, only: [:show, :destroy, :update,:edit]
   before_action :correct_user, only: [:edit, :update, :destroy]
 
@@ -18,6 +18,7 @@ class PrototypesController < ApplicationController
     if @prototype.save
       redirect_to root_path, flash: { success: "Successfully uploaded your prototype!!" }
     else
+      flash.now[:alert] = 'Posted prototype unsuccessfully'
       render :new
     end
   end
@@ -42,6 +43,7 @@ class PrototypesController < ApplicationController
     if @prototype.update(prototype_params)
       redirect_to root_path, flash: { success: "Updated your prototype" }
     else
+      flash.now[:alert] = 'Failed to Update Prototype'
       render :edit
     end
   end
@@ -53,7 +55,7 @@ class PrototypesController < ApplicationController
         :name,
         :catchcopy,
         :concept,
-        images_attributes: [:id, :image_url, :status]
+        images_attributes: [:id, :image_url, :status, :prototype_id]
         ).merge(tag_list: params[:prototype][:tag])
     end
 
