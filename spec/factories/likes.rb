@@ -1,7 +1,6 @@
 FactoryGirl.define do
   factory :like do
-    id Faker::Number.number(3)
-    prototype
     user
+    prototype
   end
 end
