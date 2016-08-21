@@ -15,7 +15,7 @@ describe UsersController do
         expect(assigns(:user)).to eq(user)
       end
 
-      it "renders the :show tempates" do
+      it "renders the :show templates" do
         expect(response).to render_template :show
       end
     end
@@ -46,7 +46,7 @@ describe UsersController do
         expect(assigns(:user)).to eq user
       end
 
-      it "chanes @user's attributes" do
+      it "changes @user's attributes" do
         user.reload
         expect(user.nickname).to eq 'hoge'
       end

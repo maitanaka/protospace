@@ -51,7 +51,7 @@ let!(:prototype) { create(:prototype) }
 
     describe 'POST #create' do
 
-      context 'with valid attribtues' do
+      context 'with valid attributes' do
 
         before do
           post :create, params
@@ -72,7 +72,7 @@ let!(:prototype) { create(:prototype) }
         end
       end
 
-      context 'with invalid attribtues' do
+      context 'with invalid attributes' do
 
         before do
           post :create, invalid_params
@@ -115,7 +115,7 @@ let!(:prototype) { create(:prototype) }
 
     describe 'GET #edit' do
 
-      it 'assigns the requested contact to @prototype' do
+      it 'assigns the requested prototype to @prototype' do
         prototype = create(:prototype)
         get :edit, id: prototype
         expect(assigns(:prototype)).to eq prototype
