@@ -1,5 +1,7 @@
 require 'capybara/poltergeist'
-Capybara.javascript_driver = :poltergeist
+Capybara.default_driver = :selenium
+Capybara.javascript_driver = :selenium
+
 # This file is copied to spec/ when you run 'rails generate rspec:install'
 ENV['RAILS_ENV'] ||= 'test'
 require File.expand_path('../../config/environment', __FILE__)
@@ -8,6 +10,8 @@ abort("The Rails environment is running in production mode!") if Rails.env.produ
 require 'spec_helper'
 require 'rspec/rails'
 require 'devise'
+require 'selenium-webdriver'
+require 'capybara-screenshot/rspec'
 # Add additional requires below this line. Rails is not loaded until this point!
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
@@ -62,4 +66,8 @@ RSpec.configure do |config|
   config.filter_rails_from_backtrace!
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
+  config.include Warden::Test::Helpers
+
+  config.include Capybara::DSL
+
 end
