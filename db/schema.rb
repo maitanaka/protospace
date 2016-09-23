@@ -39,7 +39,7 @@ ActiveRecord::Schema.define(version: 20160806094346) do
     t.integer  "user_id",    limit: 4
     t.text     "catchcopy",  limit: 65535
     t.text     "concept",    limit: 65535
-    t.integer  "like_count", limit: 4
+    t.integer  "like_count", limit: 4,     default: 0
     t.datetime "created_at"
     t.datetime "updated_at"
   end
